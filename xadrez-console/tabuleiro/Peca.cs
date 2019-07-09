@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace tabuleiro {
-    class Peca {
+    abstract class Peca {
 
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; }
@@ -18,6 +18,9 @@ namespace tabuleiro {
         public void incrementarQtdMovimentos() {
             qtdMovimentos++;
         }
+
+        public abstract bool[,] movimentosPossiveis(); //abstrato pq nn tem implementacao nessa classe
+
 
 
 
