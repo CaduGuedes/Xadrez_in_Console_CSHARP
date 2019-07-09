@@ -19,10 +19,23 @@ namespace tabuleiro {
             qtdMovimentos++;
         }
 
+        public bool existeMovimentosPossiveis() {
+            bool[,] mat = movimentosPossiveis();
+            for (int i=0; i < tab.linhas; i++) {
+                for (int j=0; j< tab.colunas; j++) {
+                    if (mat[i, j]) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool podeMorverPara(Posicao pos) {
+            return movimentosPossiveis()[pos.linha, pos.coluna];
+        }
+
         public abstract bool[,] movimentosPossiveis(); //abstrato pq nn tem implementacao nessa classe
-
-
-
 
     }
 }
